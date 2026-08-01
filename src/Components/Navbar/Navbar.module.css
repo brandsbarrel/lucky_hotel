@@ -1,0 +1,194 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #303032;
+  z-index: 1000;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 32px;
+}
+
+/* ---------- Logo (image) ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 62px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLink {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.navLink:hover {
+  color: #a9c4d8;
+}
+
+/* ---------- Book now (desktop) ---------- */
+.bookBtn {
+  background-color: #a9c4d8;
+  color: #12241f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  white-space: nowrap;
+  transition: background-color 0.25s ease;
+}
+
+.bookBtn:hover {
+  background-color: #93b3c9;
+}
+
+/* ---------- Hamburger (hidden on desktop) ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.bar {
+  width: 26px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+/* Hamburger -> X animation */
+.hamburgerOpen .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerOpen .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- Mobile menu ---------- */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #12241f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 1050;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.mobileNavLink {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.mobileMenuOpen .mobileNavLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobileBookBtn {
+  background-color: #a9c4d8;
+  color: #12241f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.mobileMenuOpen .mobileBookBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive breakpoint ---------- */
+@media (max-width: 900px) {
+  .navLinks,
+  .bookBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logoImg {
+    height: 50px;
+  }
+
+  .inner {
+    padding: 10px 20px;
+  }
+}
