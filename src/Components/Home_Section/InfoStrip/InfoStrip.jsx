@@ -95,7 +95,7 @@ export default function InfoStrip() {
 
                 <div className={styles.heroDivider} aria-hidden="true">
                     <span className={styles.heroDividerLine}></span>
-                    <svg viewBox="0 0 40 20" className={styles.heroDividerIcon}>
+                    {/* <svg viewBox="0 0 40 20" className={styles.heroDividerIcon}>
                         <path
                             d="M2 10c6-8 12-8 18 0c6-8 12-8 18 0"
                             fill="none"
@@ -103,7 +103,7 @@ export default function InfoStrip() {
                             strokeWidth="1"
                         />
                         <circle cx="20" cy="10" r="2" fill="currentColor" />
-                    </svg>
+                    </svg> */}
                     <span className={styles.heroDividerLine}></span>
                 </div>
 

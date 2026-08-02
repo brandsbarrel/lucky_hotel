@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap");
 
 .infoStrip {
-  background-color: #17181c;
+  background-color: #303032;
   padding: 56px 24px 32px;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
@@ -22,15 +22,9 @@
   margin: 0 0 8px;
 }
 
-.eyebrowLine {
-  width: 40px;
-  height: 1px;
-  background-color: #c9a227;
-  opacity: 0.8;
-}
 
 .eyebrowScript {
-  font-family: "Great Vibes", cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 40px;
   font-weight: 400;
   color: #d4a24c;
@@ -47,7 +41,7 @@
   text-transform: uppercase;
 }
 
-.heroDivider {
+/* .heroDivider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +55,7 @@
   height: 1px;
   background-color: #c9a227;
   opacity: 0.7;
-}
+} */
 
 .heroDividerIcon {
   width: 36px;
@@ -206,6 +200,12 @@
 @media (min-width: 640px) {
   .actions {
     flex-wrap: nowrap;
+  }
+}
+
+@media (min-width:350px){
+  .infoStrip{
+    margin-top: -16px;
   }
 }
 
