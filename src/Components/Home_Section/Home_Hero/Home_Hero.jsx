@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from "./Home_Hero.module.css"
 import HeroImage from "../../../assets/Home_Page_Hero.jpeg"
-import HeroImage1 from "../../../assets/Home_page_Hero2.jpeg" // apna correct filename daal dena
+import HeroImage1 from "../../../assets/Home_Page_Hero2.jpeg"
 
 const images = [HeroImage, HeroImage1]
 
