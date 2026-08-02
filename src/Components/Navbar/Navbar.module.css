@@ -25,7 +25,7 @@
 }
 
 .logoImg {
-  height: 62px;
+  height: 84px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -185,10 +185,10 @@
   }
 
   .logoImg {
-    height: 50px;
+    height: 90px;
   }
 
   .inner {
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
 }
