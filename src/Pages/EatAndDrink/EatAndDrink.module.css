@@ -1,0 +1,37 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 84px;
+  box-sizing: border-box;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageCard {
+    min-height: 60vh;
+  }
+}

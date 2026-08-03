@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./InfoStrip.module.css";
+import DividingLine from "../../Dividing_line/DividingLine";
+import whatOnImg from "../../../assets/whats_on_this_week.jpeg"
+import ReviewsSlider from "../../Review_slider/ReviewSlider";
+import DeliciousFoodImg from "../../../assets/Delicious_Food.jpeg"
+import coldrinkImg from "../../../assets/cold_drink_great.jpeg"
+import forkKnifeIcon from "../../../assets/knifeIcon1.jpeg";
+import calendarIcon from "../../../assets/calendaricon.jpeg";
 
 const INFO_ITEMS = [
     {
@@ -81,21 +88,26 @@ const INFO_ITEMS = [
 ];
 
 export default function InfoStrip() {
+    const handleScrollTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    };
+
     return (
-        <section className={styles.infoStrip}>
-            {/* ---------- Hero ---------- */}
-            <div className={styles.heroInner}>
-                <p className={styles.eyebrow}>
-                    <span className={styles.eyebrowLine}></span>
-                    <span className={styles.eyebrowScript}>Welcome to</span>
-                    <span className={styles.eyebrowLine}></span>
-                </p>
+        <>
+            <section className={styles.infoStrip}>
+                {/* ---------- Hero ---------- */}
+                <div className={styles.heroInner}>
+                    <p className={styles.eyebrow}>
+                        <span className={styles.eyebrowLine}></span>
+                        <span className={styles.eyebrowScript}>Welcome to</span>
+                        <span className={styles.eyebrowLine}></span>
+                    </p>
 
-                <h1 className={styles.heading}>The Lucky Australian</h1>
+                    <h1 className={styles.heading}>The Lucky Australian</h1>
 
-                <div className={styles.heroDivider} aria-hidden="true">
-                    <span className={styles.heroDividerLine}></span>
-                    {/* <svg viewBox="0 0 40 20" className={styles.heroDividerIcon}>
+                    <div className={styles.heroDivider} aria-hidden="true">
+                        <span className={styles.heroDividerLine}></span>
+                        {/* <svg viewBox="0 0 40 20" className={styles.heroDividerIcon}>
                         <path
                             d="M2 10c6-8 12-8 18 0c6-8 12-8 18 0"
                             fill="none"
@@ -104,61 +116,55 @@ export default function InfoStrip() {
                         />
                         <circle cx="20" cy="10" r="2" fill="currentColor" />
                     </svg> */}
-                    <span className={styles.heroDividerLine}></span>
-                </div>
+                        <span className={styles.heroDividerLine}></span>
+                    </div>
 
-                <p className={styles.description}>
-                    A classic Australian pub in the heart of North St Marys,
-                    serving great food, friendly hospitality and{" "}
-                    <span className={styles.highlight}>good times every day.</span>
-                </p>
+                    <p className={styles.description}>
+                        A classic Australian pub in the heart of North St Marys,
+                        serving great food, friendly hospitality and{" "}
+                        <span className={styles.highlight}>good times every day.</span>
+                    </p>
 
-                <div className={styles.actions}>
-                    <Link to="/eat-drink" className={styles.primaryBtn}>
-                        <svg viewBox="0 0 24 24" className={styles.btnIcon}>
-                            <path
-                                d="M6 3l3 3-5 5c-1 1-1 2.5 0 3.5s2.5 1 3.5 0l5-5l3 3"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                            <line x1="7.5" y1="14.5" x2="3" y2="21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                            <path
-                                d="M18 3l-3 3l5 5c1 1 1 2.5 0 3.5s-2.5 1-3.5 0l-5-5l-3 3"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                            <line x1="16.5" y1="14.5" x2="21" y2="21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                        </svg>
+                    <div className={styles.actions}>
+                    <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtn}>
+                        <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
                         View Menu
                     </Link>
 
                     <Link to="/book-now" className={styles.secondaryBtn}>
-                        <svg viewBox="0 0 24 24" className={styles.btnIcon}>
-                            <rect
-                                x="3.2"
-                                y="5.2"
-                                width="17.6"
-                                height="15.6"
-                                rx="1.8"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                            />
-                            <line x1="3.2" y1="9.6" x2="20.8" y2="9.6" stroke="currentColor" strokeWidth="1.6" />
-                            <line x1="7.6" y1="2.8" x2="7.6" y2="6.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                            <line x1="16.4" y1="2.8" x2="16.4" y2="6.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                        </svg>
+                        <img src={calendarIcon} alt="" className={styles.btnIcon} />
                         Book a Table
                     </Link>
                 </div>
-            </div>
+                </div>
 
-            {/* ---------- Info items ---------- */}
-            <div className={styles.inner}>
+                <img src={whatOnImg} alt="What's on this week" className={styles.heroImage} />
+
+                <ReviewsSlider />
+
+                <img src={DeliciousFoodImg} alt="Delicious food" className={styles.heroImage} />
+
+                            <br></br><br></br>
+
+                <div className={styles.actions}>
+                    <Link to="/eat-and-drink" onClick={handleScrollTop} onClick={handleScrollTop} className={styles.primaryBtn}>
+                        <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
+                        View Menu
+                    </Link>
+
+                    <Link to="/book-now" className={styles.secondaryBtn}>
+                        <img src={calendarIcon} alt="" className={styles.btnIcon} />
+                        Book a Table
+                    </Link>
+                </div>
+
+                <br></br>
+                <br></br>
+
+                <img src={coldrinkImg} alt="Cold drinks" className={styles.heroImage} />
+
+                {/* ---------- Info items ---------- */}
+                {/* <div className={styles.inner}>
                 {INFO_ITEMS.map((item, index) => (
                     <div className={styles.item} key={item.title}>
                         <div className={styles.itemContent}>
@@ -184,7 +190,7 @@ export default function InfoStrip() {
                         {index !== INFO_ITEMS.length - 1 && <span className={styles.divider}></span>}
                     </div>
                 ))}
-            </div>
-        </section>
-    );
+            </div> */}
+            </section>
+        </>);
 }

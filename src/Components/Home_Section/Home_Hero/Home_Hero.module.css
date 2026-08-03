@@ -2,49 +2,51 @@
   background-color: #303032;
   margin-top: 100px;
   width: 100%;
-  height: 90vh;
   overflow: hidden;
   position: relative;
 }
 
-.Hero_image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
+/* This one is in normal flow — it defines the container's height
+   based on the image's natural intrinsic aspect ratio */
+.heroImg {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.heroImg {
+/* All slide images are stacked absolutely on top of the sizer image */
+.heroImgAbsolute {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.heroImg.active {
+.heroImgAbsolute.active {
   opacity: 1;
+  z-index: 1;
 }
 
 @media (max-width: 1024px) {
   .Hero_image {
     margin-top: 70px;
-    height: 70vh;
   }
 }
 
 @media (max-width: 768px) {
   .Hero_image {
     margin-top: 90px;
-    height: 55vh;
   }
 }
 
 @media (max-width: 480px) {
   .Hero_image {
     margin-top: 80px;
-    height: 40vh;
   }
 }
 
