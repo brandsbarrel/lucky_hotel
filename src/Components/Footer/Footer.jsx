@@ -29,7 +29,7 @@ export default function Footer() {
           />
           <circle cx="12" cy="10" r="3" fill="#1c1c1e" />
         </svg>
-        <span>Forrester Road, North St Mary's NSW</span>
+        <span>81 Forrester Road, North St Mary's NSW</span>
       </div>
 
       {/* Phone & Email */}
@@ -40,7 +40,7 @@ export default function Footer() {
             fill="currentColor"
           />
         </svg>
-        <span>(02) 9623 1234</span>
+        <span>(02) 9623 3600</span>
         <span className={styles.pipe}>|</span>
         <svg viewBox="0 0 24 24" className={styles.icon}>
           <rect

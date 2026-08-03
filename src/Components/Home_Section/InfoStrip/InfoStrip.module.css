@@ -2,7 +2,7 @@
 
 .infoStrip {
   background-color: #303032;
-  padding: 25px 24px 32px;
+  padding: 25px 24px 0px;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
@@ -62,7 +62,7 @@
   font-weight: 700;
   color: #f5f2ec;
   letter-spacing: 0.5px;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   text-transform: uppercase;
 }
 
@@ -93,7 +93,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  margin: 0 0 32px;
+  margin: 0 0 8px;
 }
 
 .highlight {
@@ -121,7 +121,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 26px;
+  padding: 4px 7.5px;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -236,7 +236,7 @@
 
 @media (min-width: 768px) {
   .infoStrip {
-    padding: 80px 40px 48px;
+    padding: 80px 40px 0px;
   }
 
   .inner {
