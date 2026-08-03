@@ -4,7 +4,7 @@ import styles from "./InfoStrip.module.css";
 import DividingLine from "../../Dividing_line/DividingLine";
 import whatOnImg from "../../../assets/whats_on_this_week.jpeg"
 import ReviewsSlider from "../../Review_slider/ReviewSlider";
-import DeliciousFoodImg from "../../../assets/Delicious_Food.jpeg"
+import DeliciousFoodImg from "../../../assets/delicious_food.jpeg"
 import coldrinkImg from "../../../assets/cold_drink_great.jpeg"
 import forkKnifeIcon from "../../../assets/knifeIcon1.jpeg";
 import calendarIcon from "../../../assets/calendaricon.jpeg";
@@ -126,16 +126,16 @@ export default function InfoStrip() {
                     </p>
 
                     <div className={styles.actions}>
-                    <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtn}>
-                        <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
-                        View Menu
-                    </Link>
+                        <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtn}>
+                            <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
+                            View Menu
+                        </Link>
 
-                    <Link to="/book-now" className={styles.secondaryBtn}>
-                        <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                        Book a Table
-                    </Link>
-                </div>
+                        <Link to="/book-now" className={styles.secondaryBtn}>
+                            <img src={calendarIcon} alt="" className={styles.btnIcon} />
+                            Book a Table
+                        </Link>
+                    </div>
                 </div>
 
                 <img src={whatOnImg} alt="What's on this week" className={styles.heroImage} />
@@ -144,7 +144,7 @@ export default function InfoStrip() {
 
                 <img src={DeliciousFoodImg} alt="Delicious food" className={styles.heroImage} />
 
-                            <br></br><br></br>
+                <br></br><br></br>
 
                 <div className={styles.actions}>
                     <Link to="/eat-and-drink" onClick={handleScrollTop} onClick={handleScrollTop} className={styles.primaryBtn}>
