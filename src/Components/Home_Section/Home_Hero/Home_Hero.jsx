@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import styles from "./Home_Hero.module.css"
 import HeroImage from "../../../assets/Home_Page_Hero.jpeg"
 import HeroImage1 from "../../../assets/Home_Page_Hero2.jpeg"
-// import HeroImage2 from "../../../assets/Home_Page_Hero3.jpeg"
+import HeroImage2 from "../../../assets/Home_Page_Hero3.jpeg"
 import Whiteline from '../../Dividing_line/DividingLine'
 import DividingLine from '../../Dividing_line/DividingLine'
 
-const images = [HeroImage, HeroImage1]
+const images = [HeroImage, HeroImage1, HeroImage2]
 
 const Home_Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
