@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import styles from './EatAndDrink.module.css'
 import menuCover from '../../assets/menu_hero.jpeg'
 import menu from '../../assets/Menu_details.jpeg';
+import DividingLine from '../../Components/Dividing_line/DividingLine'
 
 const EatAndDrink = () => {
   useEffect(() => {
@@ -9,6 +10,8 @@ const EatAndDrink = () => {
   }, [])
 
   return (
+    <>
+    <DividingLine height="15px"/>
     <main className={styles.page}>
       <section className={styles.imageGrid}>
         <div className={styles.imageCard}>
@@ -19,6 +22,7 @@ const EatAndDrink = () => {
         </div>
       </section>
     </main>
+    </>
   )
 }
 

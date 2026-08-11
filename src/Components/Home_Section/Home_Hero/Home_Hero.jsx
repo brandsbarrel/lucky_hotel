@@ -4,6 +4,7 @@ import HeroImage from "../../../assets/Home_Page_Hero.jpeg"
 import HeroImage1 from "../../../assets/Home_Page_Hero2.jpeg"
 // import HeroImage2 from "../../../assets/Home_Page_Hero3.jpeg"
 import Whiteline from '../../Dividing_line/DividingLine'
+import DividingLine from '../../Dividing_line/DividingLine'
 
 const images = [HeroImage, HeroImage1]
 
@@ -20,6 +21,7 @@ const Home_Hero = () => {
 
     return (
         <section>
+            <DividingLine height="20px"/>
             <div className={styles.Hero_image}>
                 <img src={images[0]} alt="" aria-hidden="true" className={styles.heroImg} style={{ visibility: 'hidden' }} />
 
