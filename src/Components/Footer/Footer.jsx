@@ -4,12 +4,9 @@ import logo from "../../assets/lucky.jpeg"; // apna actual path check kar lena
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "What's On", href: "#whats-on" },
-  { label: "Food & Drinks", href: "#food-drinks" },
-  { label: "Functions", href: "#functions" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Eat & Drink", href: "#food-drinks" },
+  { label: "Contact Us", href: "#contact" },
+  { label: "Book Now", href: "#Book-Now" },
 ];
 
 export default function Footer() {
