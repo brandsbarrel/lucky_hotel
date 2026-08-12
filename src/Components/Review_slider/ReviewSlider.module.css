@@ -1,12 +1,10 @@
 .reviewsStrip {
-  background-color: #f6f5f2;
+  background-color: #f8efe8;
   background-image: repeating-linear-gradient(to bottom,
       rgba(0, 0, 0, 0.05) 0px,
       rgba(0, 0, 0, 0.05) 1px,
       transparent 1px,
       transparent 90px);
-  border-top: 2px solid #c9a227;
-  border-bottom: 2px solid #c9a227;
   padding: 40px 0 48px;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
@@ -70,7 +68,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #f6f5f2;
+  background-color: #f8efe8;
   /* background-image: repeating-linear-gradient(to bottom,
       rgba(0, 0, 0, 0.05) 0px,
       rgba(0, 0, 0, 0.05) 1px,

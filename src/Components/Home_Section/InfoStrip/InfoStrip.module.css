@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap");
 
 .infoStrip {
-  background-color: #f6f5f2;
+  background-color: #f8efe8;
   background-image: repeating-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.05) 0px,
@@ -217,14 +217,62 @@
   opacity: 0.12;
 }
 
+.actionsStacked {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.primaryBtnStacked,
+.secondaryBtnStacked {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px 8.5px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  min-height: 40px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.primaryBtnStacked {
+  background-color: #d4a24c;
+  color: #17181c;
+  border: 1px solid #d4a24c;
+  align-self: flex-start;
+}
+
+.primaryBtnStacked:hover {
+  background-color: #c19038;
+  border-color: #c19038;
+}
+
+.secondaryBtnStacked {
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid #111;
+  align-self: center;
+  width: fit-content;
+}
+
+.secondaryBtnStacked:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
 @media (min-width: 640px) {
   .actions {
     flex-wrap: nowrap;
   }
 }
 
-@media (min-width:350px){
-  .infoStrip{
+@media (min-width: 350px) {
+  .infoStrip {
     margin-top: -16px;
   }
 }
@@ -264,6 +312,12 @@
 
   .primaryBtn,
   .secondaryBtn {
+    padding: 18px 36px;
+    min-height: 40px;
+  }
+
+  .primaryBtnStacked,
+  .secondaryBtnStacked {
     padding: 18px 36px;
     min-height: 40px;
   }

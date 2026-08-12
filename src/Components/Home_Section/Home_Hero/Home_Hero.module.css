@@ -5,9 +5,6 @@
   overflow: hidden;
   position: relative;
 }
-
-/* This one is in normal flow — it defines the container's height
-   based on the image's natural intrinsic aspect ratio */
 .heroImg {
   display: block;
   width: 100%;
@@ -40,13 +37,13 @@
 
 @media (max-width: 768px) {
   .Hero_image {
-    margin-top: 90px;
+    margin-top: 70px;
   }
 }
 
 @media (max-width: 480px) {
   .Hero_image {
-    margin-top: 80px;
+    margin-top: 56px;
   }
 }
 

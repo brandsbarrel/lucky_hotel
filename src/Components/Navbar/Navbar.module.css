@@ -21,7 +21,7 @@
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 12px 32px;
+  padding: 6px 32px;
 }
 
 /* ---------- Logo (image) ---------- */
@@ -32,7 +32,7 @@
 }
 
 .logoImg {
-  height: 84px;
+  height: 56px; 
   width: auto;
   object-fit: contain;
   display: block;
@@ -69,7 +69,7 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  padding: 12px 22px;
+  padding: 9px 22px; 
   white-space: nowrap;
   transition: background-color 0.25s ease;
 }
@@ -85,8 +85,8 @@
   justify-content: center;
   align-items: center;
   gap: 6px;
-  width: 40px;
-  height: 40px;
+  width: 36px; 
+  height: 36px;
   background: none;
   border: none;
   cursor: pointer;
@@ -199,10 +199,10 @@
   }
 
   .logoImg {
-    height: 90px;
+    height: 60px;
   }
 
   .inner {
-    padding: 0px 20px;
+    padding: 0px 20px; 
   }
 }

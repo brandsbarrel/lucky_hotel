@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap");
+
+.contactPage {
+  background-color: #f8efe8;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 90px
+  );
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  margin-top: 56px;
+}
+
+/* ---------- Hero image ---------- */
+.heroImage {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Quick Actions ---------- */
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 700px;
+  margin: 40px auto 36px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 20px;
+  background: #d4a24c;
+  color: #17181c;
+  border: 1px solid #d4a24c;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.actionBtn:hover {
+  background: #c19038;
+  border-color: #c19038;
+}
+
+
+/* ---------- Container ---------- */
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 56px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #d4a24c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.heading {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 40px;
+}
+
+.dividerLine {
+  width: 60px;
+  height: 1px;
+  background-color: #d4a24c;
+  opacity: 0.7;
+}
+
+.dividerDot {
+  width: 6px;
+  height: 6px;
+  background-color: #d4a24c;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ---------- Contact row ---------- */
+.contactRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contactIcon {
+  width: 26px;
+  height: 26px;
+  color: #d4a24c;
+}
+
+.contactText {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.verticalDivider {
+  display: none; /* only shown on desktop between columns */
+}
+
+/* ---------- Opening hours ---------- */
+.hoursHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.hoursHeaderLine {
+  flex: 1;
+  max-width: 90px;
+  height: 1px;
+  background-color: #d4a24c;
+  opacity: 0.5;
+}
+
+.hoursTitle {
+  color: #d4a24c;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.hoursRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.hoursRow:last-child {
+  border-bottom: none;
+}
+
+.hoursDay {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.hoursTime {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.seeSoon {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  color: #d4a24c;
+  margin: 0;
+}
+
+/* ---------- Tablet / Desktop ---------- */
+@media (min-width: 640px) {
+    .contactPage {
+        margin-top: 64px;
+    }
+  .contactRow {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .contactItem {
+    flex: 1;
+    padding: 0 24px;
+  }
+
+  .verticalDivider {
+    display: block;
+    width: 1px;
+    align-self: stretch;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (min-width: 768px) {
+    .contactPage {
+        margin-top: 70px;
+    }
+  .heroImage {
+    height: 480px;
+  }
+
+  .inner {
+    max-width: 900px;
+    padding: 72px 40px 80px;
+  }
+
+  .heading {
+    font-size: 44px;
+  }
+
+  .contactText {
+    font-size: 16px;
+  }
+
+  .hoursDay,
+  .hoursTime {
+    font-size: 16px;
+  }
+
+  .hoursList {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .seeSoon {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .actionButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .actionBtn {
+    width: 100%;
+  }
+}

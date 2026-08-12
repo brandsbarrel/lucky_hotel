@@ -125,23 +125,27 @@ export default function InfoStrip() {
                         <span className={styles.highlight}>good times every day.</span>
                     </p>
 
-                    <div className={styles.actions}>
-                        <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtn}>
+                    <div className={styles.actionsStacked}>
+                        <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtnStacked}>
                             <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
                             View Menu
                         </Link>
 
-                        <Link to="/book-now" className={styles.secondaryBtn}>
+                        <Link to="/book-now" className={styles.secondaryBtnStacked}>
                             <img src={calendarIcon} alt="" className={styles.btnIcon} />
                             Book a Table
                         </Link>
                     </div>
                 </div>
-
+                <DividingLine height="8px" />
                 <img src={whatOnImg} alt="What's on this week" className={styles.heroImage} />
-
+                <br></br>
+                <div className={styles.actions}>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
+                        FOLLOW US ON INSTAGRAM
+                    </a>
+                </div>
                 <ReviewsSlider />
-
                 <img src={DeliciousFoodImg} alt="Delicious food" className={styles.heroImage} />
 
                 <br></br><br></br>
@@ -160,7 +164,7 @@ export default function InfoStrip() {
 
                 <br></br>
                 <br></br>
-
+                <DividingLine height="8px" />
                 <img src={coldrinkImg} alt="Cold drinks" className={styles.heroImage} />
                 <div className={styles.functionMenuWrapper}>
                     <Link to="/function-menu" onClick={handleScrollTop} className={styles.functionMenuBtn}>
