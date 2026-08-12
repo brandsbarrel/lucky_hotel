@@ -1,5 +1,10 @@
 .reviewsStrip {
-  background-color: #303032;
+  background-color: #f6f5f2;
+  background-image: repeating-linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 90px);
   border-top: 2px solid #c9a227;
   border-bottom: 2px solid #c9a227;
   padding: 40px 0 48px;
@@ -24,20 +29,16 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 48px,
-    #000 calc(100% - 48px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 48px,
-    #000 calc(100% - 48px),
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0,
+      #000 48px,
+      #000 calc(100% - 48px),
+      transparent 100%);
+  mask-image: linear-gradient(to right,
+      transparent 0,
+      #000 48px,
+      #000 calc(100% - 48px),
+      transparent 100%);
 }
 
 .track {
@@ -56,6 +57,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     /* content is duplicated, so -50% is exactly one full loop */
     transform: translateX(-50%);
@@ -68,7 +70,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #38383b;
+  background-color: #f6f5f2;
+  /* background-image: repeating-linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 90px); */
   border: 1px solid rgba(201, 162, 39, 0.35);
   border-radius: 6px;
   padding: 22px 20px;
@@ -85,7 +92,7 @@
 }
 
 .quote {
-  color: #e8e8e8;
+  color: #000000;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
@@ -107,12 +114,29 @@
   line-height: 1;
 }
 
-.googleG span:nth-child(1) { color: #4285f4; }
-.googleG span:nth-child(2) { color: #ea4335; }
-.googleG span:nth-child(3) { color: #fbbc05; }
-.googleG span:nth-child(4) { color: #4285f4; }
-.googleG span:nth-child(5) { color: #34a853; }
-.googleG span:nth-child(6) { color: #ea4335; }
+.googleG span:nth-child(1) {
+  color: #4285f4;
+}
+
+.googleG span:nth-child(2) {
+  color: #ea4335;
+}
+
+.googleG span:nth-child(3) {
+  color: #fbbc05;
+}
+
+.googleG span:nth-child(4) {
+  color: #4285f4;
+}
+
+.googleG span:nth-child(5) {
+  color: #34a853;
+}
+
+.googleG span:nth-child(6) {
+  color: #ea4335;
+}
 
 @media (max-width: 768px) {
   .viewport {

@@ -1,6 +1,11 @@
 .footer {
     margin-top: 10px;
-    background-color: #303032;
+    background-color: #f6f5f2;
+    background-image: repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.05) 0px,
+            rgba(0, 0, 0, 0.05) 1px,
+            transparent 1px,
+            transparent 90px);
     padding: 60px 24px 30px;
     display: flex;
     flex-direction: column;
@@ -26,7 +31,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    color: #cfcfd2;
+    color: #000000;
     font-size: 17px;
     margin-bottom: 12px;
 }
@@ -34,7 +39,7 @@
 .icon {
     width: 18px;
     height: 18px;
-    color: #9d9da2;
+    color: #000000;
     flex-shrink: 0;
 }
 
@@ -48,14 +53,14 @@
 }
 
 .navLink {
-    color: #e5e5e7;
+    color: #000000;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.25s ease;
 }
 
 .navLink:hover {
-    color: #ffffff;
+    color: #1e1e1e;
 }
 
 .pipe {
@@ -75,7 +80,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background-color: #4a4a4d;
+    background-color: #d0d0d0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,12 +109,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #9d9da2;
+    color: #000000;
     font-size: 14px;
 }
 
 .privacyLink {
-    color: #9d9da2;
+    color: #000000;
     text-decoration: none;
 }
 
