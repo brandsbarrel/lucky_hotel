@@ -162,35 +162,12 @@ export default function InfoStrip() {
                 <br></br>
 
                 <img src={coldrinkImg} alt="Cold drinks" className={styles.heroImage} />
+                <div className={styles.functionMenuWrapper}>
+                    <Link to="/function-menu" onClick={handleScrollTop} className={styles.functionMenuBtn}>
+                        View Function Menu
+                    </Link>
+                </div>
 
-                {/* ---------- Info items ---------- */}
-                {/* <div className={styles.inner}>
-                {INFO_ITEMS.map((item, index) => (
-                    <div className={styles.item} key={item.title}>
-                        <div className={styles.itemContent}>
-                            <div className={styles.itemHeader}>
-                                {item.icon}
-                                <h3 className={styles.title}>{item.title}</h3>
-                            </div>
-                            <p className={styles.subtitle}>{item.subtitle}</p>
-                        </div>
-                        <svg
-                            className={styles.chevron}
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M9 6l6 6l-6 6"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                        {index !== INFO_ITEMS.length - 1 && <span className={styles.divider}></span>}
-                    </div>
-                ))}
-            </div> */}
             </section>
         </>);
 }
