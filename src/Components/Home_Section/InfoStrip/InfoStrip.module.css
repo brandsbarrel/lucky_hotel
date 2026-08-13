@@ -2,13 +2,6 @@
 
 .infoStrip {
   background-color: #f8efe8;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05) 0px,
-    rgba(0, 0, 0, 0.05) 1px,
-    transparent 1px,
-    transparent 90px
-  );
   padding: 8px 24px 0px;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
@@ -219,7 +212,6 @@
 
 .actionsStacked {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 }
@@ -245,7 +237,7 @@
   background-color: #d4a24c;
   color: #17181c;
   border: 1px solid #d4a24c;
-  align-self: flex-start;
+  /* align-self: flex-start; */
 }
 
 .primaryBtnStacked:hover {
@@ -259,6 +251,7 @@
   border: 1px solid #111;
   align-self: center;
   width: fit-content;
+  text-align: center;
 }
 
 .secondaryBtnStacked:hover {

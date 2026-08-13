@@ -1,11 +1,6 @@
 .footer {
     margin-top: 10px;
     background-color: #f8efe8;
-    background-image: repeating-linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.05) 0px,
-            rgba(0, 0, 0, 0.05) 1px,
-            transparent 1px,
-            transparent 90px);
     padding: 60px 24px 30px;
     display: flex;
     flex-direction: column;
