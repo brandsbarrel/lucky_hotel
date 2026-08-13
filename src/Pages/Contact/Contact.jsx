@@ -3,6 +3,7 @@ import styles from "./Contact.module.css";
 import contactImg from "../../assets/contact_img.jpeg";
 import WhiteLine from "../../Components/Dividing_line/DividingLine";
 import { Link } from "react-router-dom";
+import menuPdf from "../../assets/Menu_PDF.pdf"
 
 const HOURS = [
     { day: "Monday", time: "10 am–2 am" },
@@ -13,6 +14,16 @@ const HOURS = [
     { day: "Saturday", time: "10 am–2 am" },
     { day: "Sunday", time: "10 am–10 pm" },
 ];
+
+
+const handlePrintMenu = () => { // for download menu
+    const link = document.createElement("a");
+    link.href = menuPdf;
+    link.download = "Menu.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
 
 export default function ContactPage() {
     return (
@@ -105,8 +116,8 @@ export default function ContactPage() {
                         Book a Table
                     </Link>
 
-                    <Link to="/eat-and-drink" className={styles.actionBtn}>
-                        Function Menu
+                    <Link onClick={() => { handlePrintMenu() }} className={styles.actionBtn}>
+                        Menu in PDF
                     </Link>
 
                     <a

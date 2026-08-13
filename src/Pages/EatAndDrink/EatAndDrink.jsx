@@ -16,14 +16,23 @@ const EatAndDrink = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
-  const handlePrintMenu = () => {
-    const printWindow = window.open(menuPdf, "_blank");
+  // const handlePrintMenu = () => {
+  //   const printWindow = window.open(menuPdf, "_blank");
 
-    if (printWindow) {
-      printWindow.onload = () => {
-        printWindow.print();
-      };
-    }
+  //   if (printWindow) {
+  //     printWindow.onload = () => {
+  //       printWindow.print();
+  //     };
+  //   }
+  // };
+
+  const handlePrintMenu = () => { // for download menu
+    const link = document.createElement("a");
+    link.href = menuPdf;
+    link.download = "Menu.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -51,7 +60,7 @@ const EatAndDrink = () => {
             className={styles.printButton}
             onClick={handlePrintMenu}
           >
-            Print Menu
+            Menu in PDF
           </button>
         </div>
       </main>
