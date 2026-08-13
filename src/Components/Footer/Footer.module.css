@@ -10,7 +10,7 @@
 }
 
 .logoWrap {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .logoImg {
@@ -29,33 +29,76 @@
     color: #000000;
     font-size: 17px;
     margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+
+.infoRow:last-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .icon {
-    width: 18px;
-    height: 18px;
-    color: #000000;
+    width: 20px;
+    height: 20px;
+    color: #d4a24c;
     flex-shrink: 0;
 }
 
-.navLinks {
+/* ---------- Nav grid (2x2 icon cells) ---------- */
+.navGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 0 40px;
+}
+
+.navCell {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 30px 0 34px;
-}
-
-.navLink {
-    color: #000000;
+    gap: 14px;
+    padding: 28px 16px;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.25s ease;
+    color: #000000;
+    border-right: 1px solid rgba(212, 162, 76, 0.4);
+    border-bottom: 1px solid rgba(212, 162, 76, 0.4);
+    transition: opacity 0.2s ease;
 }
 
-.navLink:hover {
-    color: #1e1e1e;
+.navCell:hover {
+    opacity: 0.7;
+}
+
+.navCell:nth-child(2n) {
+    border-right: none;
+}
+
+.navCell:nth-child(3),
+.navCell:nth-child(4) {
+    border-bottom: none;
+}
+
+.navIcon {
+    width: 32px;
+    height: 32px;
+    color: #d4a24c;
+}
+
+.navLabel {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.navCellHighlight .navLabel {
+    color: #d4a24c;
 }
 
 .pipe {
@@ -96,8 +139,21 @@
     width: 100%;
     max-width: 1000px;
     height: 1px;
-    background-color: #3a3a3c;
+    background-color: #d4a24c;
+    opacity: 0.5;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.dividerDot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background-color: #d4a24c;
+    opacity: 1;
 }
 
 .bottomRow {
@@ -114,7 +170,7 @@
 }
 
 .privacyLink:hover {
-    color: #ffffff;
+    color: #d4a24c;
 }
 
 @media (max-width: 900px) {
@@ -122,15 +178,16 @@
         max-width: 320px;
     }
 
-    .navLinks {
-        gap: 8px;
-    }
-
-    .navLink {
+    .infoRow {
         font-size: 15px;
     }
 
-    .infoRow {
+    .navIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .navLabel {
         font-size: 15px;
     }
 }
@@ -150,18 +207,22 @@
         font-size: 14px;
     }
 
-    .infoRow .pipe {
-        display: none;
+    .navGrid {
+        max-width: 400px;
     }
 
-    .navLinks {
-        flex-direction: column;
-        gap: 4px;
-        margin: 24px 0 28px;
+    .navCell {
+        padding: 22px 8px;
+        gap: 10px;
     }
 
-    .navLinks .pipe {
-        display: none;
+    .navIcon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .navLabel {
+        font-size: 13px;
     }
 
     .socialCircle {
