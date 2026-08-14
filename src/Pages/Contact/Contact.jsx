@@ -112,7 +112,7 @@ export default function ContactPage() {
                         View Menu
                     </Link>
 
-                    <Link to="/book-now" className={styles.actionBtn}>
+                    <Link to="/#book-now" className={styles.actionBtn}>
                         Book a Table
                     </Link>
 
@@ -121,7 +121,7 @@ export default function ContactPage() {
                     </Link>
 
                     <a
-                        href="https://www.instagram.com/"
+                        href="https://www.instagram.com/luckyozhotel"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.actionBtn}
