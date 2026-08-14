@@ -56,14 +56,7 @@ const EatAndDrink = () => {
             className={styles.printButton}
             onClick={handleViewMenu}
           >
-            View Menu (PDF)
-          </button>
-
-          <button
-            className={styles.downloadButton}
-            onClick={handleDownloadMenu}
-          >
-            Download
+            DOWNLOAD PDF MENU
           </button>
         </div>
       </main>
