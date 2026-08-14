@@ -5,7 +5,7 @@ import logo from "../../assets/lucky.jpeg"; // apna actual path check kar lena
 const NAV_LINKS = [
   {
     label: "Home",
-    href: "#home",
+    href: "/",
     icon: (
       <svg viewBox="0 0 24 24" className={styles.navIcon}>
         <path
@@ -29,7 +29,7 @@ const NAV_LINKS = [
   },
   {
     label: "Eat & Drink",
-    href: "#food-drinks",
+    href: "/eat-and-drink",
     icon: (
       <svg viewBox="0 0 24 24" className={styles.navIcon}>
         <path
@@ -45,7 +45,7 @@ const NAV_LINKS = [
   },
   {
     label: "Contact Us",
-    href: "#contact",
+    href: "/contact",
     icon: (
       <svg viewBox="0 0 24 24" className={styles.navIcon}>
         <path
@@ -169,7 +169,7 @@ export default function Footer() {
             />
           </svg>
         </a>
-        <a href="#instagram" className={styles.socialCircle} aria-label="Instagram">
+        <a href="https://www.instagram.com/luckyozhotel" className={styles.socialCircle} aria-label="Instagram">
           <svg viewBox="0 0 24 24" className={styles.socialIcon}>
             <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
             <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
