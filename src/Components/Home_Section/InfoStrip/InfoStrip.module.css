@@ -212,13 +212,14 @@
 
 .actionsStacked {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .primaryBtnStacked,
 .secondaryBtnStacked {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
