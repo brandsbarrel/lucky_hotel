@@ -28,10 +28,10 @@ const handlePrintMenu = () => { // for download menu
 export default function ContactPage() {
     return (
         <section className={styles.contactPage}>
-            <WhiteLine height="12px" />
+            <WhiteLine height="14px" />
             {/* ---------- Hero image ---------- */}
             <img src={contactImg} alt="Inside The Lucky Australian" className={styles.heroImage} />
-            <WhiteLine height="9px" />
+            <WhiteLine height="14px" />
             {/* ---------- Contact info ---------- */}
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>Contact Us</p>

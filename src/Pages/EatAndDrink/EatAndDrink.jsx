@@ -33,7 +33,7 @@ const EatAndDrink = () => {
 
   return (
     <>
-      <DividingLine height="18px" />
+      <DividingLine height="14px" />
 
       <main className={styles.page}>
         <img

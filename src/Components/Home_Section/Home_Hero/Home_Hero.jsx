@@ -21,7 +21,7 @@ const Home_Hero = () => {
 
     return (
         <section>
-            <DividingLine height="24px"/>
+            <DividingLine height="14px"/>
             <div className={styles.Hero_image}>
                 <img src={images[0]} alt="" aria-hidden="true" className={styles.heroImg} style={{ visibility: 'hidden' }} />
 

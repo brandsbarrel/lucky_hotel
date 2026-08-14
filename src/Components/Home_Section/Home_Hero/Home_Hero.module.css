@@ -1,6 +1,6 @@
 .Hero_image {
   background-color: #303032;
-  margin-top: 100px;
+  margin-top: 90px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -43,7 +43,7 @@
 
 @media (max-width: 480px) {
   .Hero_image {
-    margin-top: 80px;
+    margin-top: 90px;
     margin-bottom: 10px;
   }
 }
