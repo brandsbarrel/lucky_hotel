@@ -16,17 +16,13 @@ const EatAndDrink = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
-  // const handlePrintMenu = () => {
-  //   const printWindow = window.open(menuPdf, "_blank");
+  // Opens the PDF in a new tab so people can read/view it first
+  const handleViewMenu = () => {
+    window.open(menuPdf, "_blank", "noopener,noreferrer");
+  };
 
-  //   if (printWindow) {
-  //     printWindow.onload = () => {
-  //       printWindow.print();
-  //     };
-  //   }
-  // };
-
-  const handlePrintMenu = () => { // for download menu
+  // Triggers an actual file download
+  const handleDownloadMenu = () => {
     const link = document.createElement("a");
     link.href = menuPdf;
     link.download = "Menu.pdf";
@@ -37,7 +33,7 @@ const EatAndDrink = () => {
 
   return (
     <>
-      <DividingLine height="15px" />
+      <DividingLine height="18px" />
 
       <main className={styles.page}>
         <img
@@ -53,14 +49,21 @@ const EatAndDrink = () => {
             alt={`Menu ${index + 1}`}
             className={styles.menuImage}
           />
-
         ))}
+
         <div className={styles.buttonContainer}>
           <button
             className={styles.printButton}
-            onClick={handlePrintMenu}
+            onClick={handleViewMenu}
           >
-            Menu in PDF
+            View Menu (PDF)
+          </button>
+
+          <button
+            className={styles.downloadButton}
+            onClick={handleDownloadMenu}
+          >
+            Download
           </button>
         </div>
       </main>

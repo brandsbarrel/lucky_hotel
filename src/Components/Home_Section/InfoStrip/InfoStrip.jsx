@@ -63,17 +63,17 @@ export default function InfoStrip() {
 
                 <br></br><br></br>
 
-                <div className={styles.actions}>
-                    <Link to="/eat-and-drink" onClick={handleScrollTop} onClick={handleScrollTop} className={styles.primaryBtn}>
-                        <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
-                        View Menu
-                    </Link>
+                <div className={styles.actionsStacked}>
+                        <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.primaryBtnStacked}>
+                            <img src={forkKnifeIcon} alt="" className={styles.btnIcon} />
+                            View Menu
+                        </Link>
 
-                    <Link to="/book-now" className={styles.secondaryBtn}>
-                        <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                        Book a Table
-                    </Link>
-                </div>
+                        <Link to="/book-now" className={styles.secondaryBtnStacked}>
+                            <img src={calendarIcon} alt="" className={styles.btnIcon} />
+                            Book a Table
+                        </Link>
+                    </div>
 
                 <br></br>
                 <br></br>
