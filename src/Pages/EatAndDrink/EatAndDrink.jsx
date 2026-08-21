@@ -9,7 +9,7 @@ import menuPdf from "../../assets/Menu_PDF.pdf";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
 
-const menus = [menu1, menu2, menu3];
+const menus = [menu2, menu1, menu3];
 
 const EatAndDrink = () => {
   useEffect(() => {

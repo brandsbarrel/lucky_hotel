@@ -86,7 +86,7 @@ export default function ContactPage() {
                                 d="M4 7l8 6.2L20 7"
                             />
                         </svg>
-                        <p className={styles.contactText}>info@theluckyhotel.com.au</p>
+                        <p className={styles.contactText}>info@luckyaustralian.com</p>
                     </div>
                 </div>
 

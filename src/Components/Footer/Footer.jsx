@@ -142,7 +142,7 @@ export default function Footer() {
             strokeWidth="1.6"
           />
         </svg>
-        <span>info@theluckyhotel.com.au</span>
+        <span>info@luckyaustralian.com</span>
       </div>
 
       {/* Nav links - 2x2 icon grid */}
