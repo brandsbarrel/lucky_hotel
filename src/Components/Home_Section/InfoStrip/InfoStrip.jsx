@@ -136,11 +136,11 @@ export default function InfoStrip() {
                 </div>
                 <DividingLine height="8px" />
                 <img src={coldrinkImg} alt="Cold drinks" className={styles.heroImage} />
-                <div className={styles.functionMenuWrapper}>
+                {/* <div className={styles.functionMenuWrapper}>
                     <Link to="/eat-and-drink" onClick={handleScrollTop} className={styles.functionMenuBtn}>
                         View Function Menu
                     </Link>
-                </div>
+                </div> */}
 
             </section>
         </>);

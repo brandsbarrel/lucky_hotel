@@ -1,11 +1,6 @@
 .reviewsStrip {
   background-color: #f8efe8;
-  background-image: repeating-linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.05) 0px,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 1px,
-      transparent 90px);
-  padding: 40px 0 48px;
+  padding: 40px 0 64px;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
@@ -16,68 +11,104 @@
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.hint {
+  text-align: center;
+  color: #b8912f;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   margin: 0 0 36px;
 }
 
-/* Fades the edges so cards visually emerge/disappear rather than hard-cutting */
-.viewport {
-  --card-w: 340px;
-  --gap: 32px;
-  max-width: calc(var(--card-w) * 2 + var(--gap) * 3);
+.stackWrapper {
+  max-width: 380px;
   margin: 0 auto;
-  overflow: hidden;
   position: relative;
-  -webkit-mask-image: linear-gradient(to right,
-      transparent 0,
-      #000 48px,
-      #000 calc(100% - 48px),
-      transparent 100%);
-  mask-image: linear-gradient(to right,
-      transparent 0,
-      #000 48px,
-      #000 calc(100% - 48px),
-      transparent 100%);
-}
-
-.track {
-  display: flex;
-  width: max-content;
-  gap: var(--gap);
-  padding: 4px var(--gap);
-  animation: train-scroll var(--duration, 24s) linear infinite;
-}
-
-.viewport:hover .track {
-  animation-play-state: paused;
-}
-
-@keyframes train-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    /* content is duplicated, so -50% is exactly one full loop */
-    transform: translateX(-50%);
-  }
+  height: 300px;
 }
 
 .card {
-  flex: 0 0 var(--card-w);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 340px;
+  margin-left: -170px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #f8efe8;
-  /* background-image: repeating-linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.05) 0px,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 1px,
-      transparent 90px); */
+  background-color: #fffdfb;
   border: 1px solid rgba(201, 162, 39, 0.35);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 22px 20px;
   box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.card:hover {
+  box-shadow: 0 10px 24px rgba(201, 162, 39, 0.25);
+}
+
+.card:focus-visible {
+  outline: 2px solid #d4a24c;
+  outline-offset: 3px;
+}
+
+/* Drop-in entrance: falls from above, from alternating sides, with a small bounce */
+.dropIn {
+  animation: dropInAnim 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes dropInAnim {
+  0% {
+    opacity: 0;
+    transform: translate(calc(var(--dir, 1) * 160px), -180px) rotate(calc(var(--dir, 1) * 28deg));
+  }
+
+  65% {
+    opacity: 1;
+    transform: translate(calc(var(--dir, 1) * -8px), 8px) rotate(calc(var(--rotate, 0) * 1deg - var(--dir, 1) * 3deg));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
+  }
+}
+
+/* Card leaving to the back of the stack when clicked */
+.exiting {
+  animation: exitAnim 0.4s ease forwards;
+}
+
+@keyframes exitAnim {
+  0% {
+    opacity: 1;
+    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--dir, 1) * -60px), 140px) rotate(calc(var(--dir, 1) * -18deg));
+  }
+}
+
+/* Settled state: smooth transform transition when stack reorders */
+.settled {
+  opacity: 1;
+  transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
 }
 
 .stars {
@@ -96,6 +127,10 @@
   line-height: 1.6;
   margin: 0 0 10px;
   font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .author {
@@ -136,28 +171,23 @@
   color: #ea4335;
 }
 
-@media (max-width: 768px) {
-  .viewport {
-    --card-w: 260px;
-    --gap: 20px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .heading {
-    font-size: 21px;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
+@media (max-width: 420px) {
+  .stackWrapper {
+    max-width: calc(100vw - 40px);
+    height: 320px;
   }
 
-  .viewport {
-    --card-w: calc(100vw - 96px);
+  .card {
+    width: calc(100vw - 80px);
+    margin-left: calc((100vw - 80px) / -2);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .track {
-    animation: none;
+  .card {
+    animation: none !important;
+    transition: none;
+    opacity: 1;
+    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
   }
 }

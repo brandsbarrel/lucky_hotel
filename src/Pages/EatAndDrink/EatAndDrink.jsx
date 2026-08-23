@@ -4,12 +4,11 @@ import styles from "./EatAndDrink.module.css";
 import menuCover from "../../assets/menu_hero.jpeg";
 import menu1 from "../../assets/Menu_details_1.jpeg";
 import menu2 from "../../assets/Menu_details_2.jpeg";
-import menu3 from "../../assets/Menu_details_3.jpeg";
 import menuPdf from "../../assets/Menu_PDF.pdf";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
 
-const menus = [menu2, menu1, menu3];
+const menus = [menu2, menu1];
 
 const EatAndDrink = () => {
   useEffect(() => {

@@ -194,7 +194,7 @@
 
 @media (max-width: 600px) {
     .footer {
-        padding: 40px 16px 24px;
+        padding: 0px 16px 24px;
     }
 
     .logoImg {
