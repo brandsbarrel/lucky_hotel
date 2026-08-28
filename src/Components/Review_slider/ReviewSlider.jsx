@@ -23,8 +23,8 @@ const Stars = ({ count = 5 }) => (
 )
 
 // Slower stagger + drop duration than before
-const DROP_DELAY_SECONDS = 0.5
-const DROP_DURATION_SECONDS = 1.1
+const DROP_DELAY_SECONDS = 2
+const DROP_DURATION_SECONDS = 1.7
 
 // Small fanned-stack offsets per depth-from-top (0 = frontmost card)
 const STACK_OFFSETS = [

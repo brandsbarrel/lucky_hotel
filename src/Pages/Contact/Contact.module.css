@@ -219,9 +219,48 @@
   }
 }
 
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.7s ease-in-out;
+}
+
+.noTransition {
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.slideImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
 @media (min-width: 768px) {
     .contactPage {
-        margin-top: 70px;
+        margin-top: 85px;
     }
   .heroImage {
     height: 480px;
@@ -263,5 +302,9 @@
 
   .actionBtn {
     width: 100%;
+  }
+
+  .inner{
+    margin-top: 10px;
   }
 }

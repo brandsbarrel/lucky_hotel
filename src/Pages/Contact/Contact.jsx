@@ -4,6 +4,26 @@ import contactImg from "../../assets/contact_img.jpeg";
 import WhiteLine from "../../Components/Dividing_line/DividingLine";
 import { Link } from "react-router-dom";
 import menuPdf from "../../assets/Menu_PDF.pdf"
+import DividingLine from "../../Components/Dividing_line/DividingLine";
+import { useState } from "react";
+import { useCallback } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
+
+import dish1 from "../../assets/dishe_crousal1.jpeg";
+import dish2 from "../../assets/dishe_crousal2.jpeg";
+import dish3 from "../../assets/dishe_crousal3.jpeg";
+import dish4 from "../../assets/dishe_crousal4.jpeg";
+import dish5 from "../../assets/dishe_crousal5.jpeg";
+import dish6 from "../../assets/dishe_crousal6.jpeg";
+import dish7 from "../../assets/dishe_crousal7.jpeg";
+
+
+const dishImages = [dish1, dish2, dish3, dish4, dish5, dish6, dish7];
+const extendedSlides = [...dishImages, dishImages[0]];
+
+// How often the carousel auto-advances
+const AUTOPLAY_INTERVAL_MS = 3000;
 
 const HOURS = [
     { day: "Monday", time: "10 am–2 am" },
@@ -26,12 +46,65 @@ const handlePrintMenu = () => { // for download menu
 };
 
 export default function ContactPage() {
+
+    const [withTransition, setWithTransition] = useState(true);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const trackRef = useRef(null);
+
+    // Auto-advance the carousel. This was missing before — nothing ever
+    // incremented currentIndex, so the track never moved.
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => prev + 1);
+        }, AUTOPLAY_INTERVAL_MS);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const handleTransitionEnd = useCallback(() => {
+        if (currentIndex === dishImages.length) {
+            setWithTransition(false);
+            setCurrentIndex(0);
+        }
+    }, [currentIndex]);
+
+    useEffect(() => {
+        if (withTransition) return;
+
+        const frame = requestAnimationFrame(() => {
+            setWithTransition(true);
+        });
+
+        return () => cancelAnimationFrame(frame);
+    }, [withTransition]);
+
     return (
         <section className={styles.contactPage}>
             <WhiteLine height="14px" />
             {/* ---------- Hero image ---------- */}
             <img src={contactImg} alt="Inside The Lucky Australian" className={styles.heroImage} />
             <WhiteLine height="14px" />
+
+            <div className={styles.carouselContainer}>
+                <div
+                    ref={trackRef}
+                    className={`${styles.track} ${!withTransition ? styles.noTransition : ""}`}
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    onTransitionEnd={handleTransitionEnd}
+                >
+                    {extendedSlides.map((src, i) => (
+                        <div className={styles.slide} key={i}>
+                            <img
+                                src={src}
+                                alt={`Dish ${i + 1}`}
+                                className={styles.slideImage}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <DividingLine height="10px" />
+
             {/* ---------- Contact info ---------- */}
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>Contact Us</p>

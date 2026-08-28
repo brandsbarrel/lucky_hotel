@@ -79,7 +79,7 @@ export default function Navbar() {
                         }}
                         onClick={closeMenu}
                     >
-                        Book Now
+                        Call us to book a table
                     </Link>
                 </nav>
             </div>
