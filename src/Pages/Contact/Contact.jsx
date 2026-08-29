@@ -17,6 +17,7 @@ import dish4 from "../../assets/dishe_crousal4.jpeg";
 import dish5 from "../../assets/dishe_crousal5.jpeg";
 import dish6 from "../../assets/dishe_crousal6.jpeg";
 import dish7 from "../../assets/dishe_crousal7.jpeg";
+import ReviewSlider from "../../Components/Review_slider/ReviewSlider";
 
 
 const dishImages = [dish1, dish2, dish3, dish4, dish5, dish6, dish7];
@@ -85,7 +86,7 @@ export default function ContactPage() {
             <img src={contactImg} alt="Inside The Lucky Australian" className={styles.heroImage} />
             <WhiteLine height="14px" />
 
-            <div className={styles.carouselContainer}>
+            {/* <div className={styles.carouselContainer}>
                 <div
                     ref={trackRef}
                     className={`${styles.track} ${!withTransition ? styles.noTransition : ""}`}
@@ -102,8 +103,8 @@ export default function ContactPage() {
                         </div>
                     ))}
                 </div>
-            </div>
-            <DividingLine height="10px" />
+            </div> */}
+            {/* <DividingLine height="10px" /> */}
 
             {/* ---------- Contact info ---------- */}
             <div className={styles.inner}>
@@ -179,15 +180,17 @@ export default function ContactPage() {
                     ))}
                 </div>
 
+                <ReviewSlider/>
+
 
                 <div className={styles.actionButtons}>
                     <Link to="/eat-and-drink" className={styles.actionBtn}>
                         View Menu
                     </Link>
 
-                    <Link to="/#book-now" className={styles.actionBtn}>
-                        Book a Table
-                    </Link>
+                    <a href="tel:+61296233600" className={styles.actionBtn}>
+                        Call us to Book a Table
+                    </a>
 
                     <Link onClick={() => { handlePrintMenu() }} className={styles.actionBtn}>
                         Menu in PDF

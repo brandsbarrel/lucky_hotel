@@ -39,10 +39,10 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                {/* Book now button (desktop) */}
-                <Link to="/book-now" className={styles.bookBtn}>
-                    Book Now
-                </Link>
+                {/* Call us to Book a Table button (desktop) */}
+                <a href="tel:+61296233600" className={styles.bookBtn}>
+                    Call us to Book a Table
+                </a>
 
                 {/* Hamburger button (mobile) */}
                 <button
@@ -71,16 +71,16 @@ export default function Navbar() {
                             {link.label}
                         </NavLink>
                     ))}
-                    <Link
-                        to="/book-now"
+                    <a
+                        href="tel:+61296233600"
                         className={styles.mobileBookBtn}
                         style={{
                             transitionDelay: isOpen ? `${NAV_LINKS.length * 0.05 + 0.1}s` : "0s",
                         }}
                         onClick={closeMenu}
                     >
-                        Call us to book a table
-                    </Link>
+                        Call us to Book a Table
+                    </a>
                 </nav>
             </div>
         </header>

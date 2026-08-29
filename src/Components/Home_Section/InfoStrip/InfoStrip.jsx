@@ -81,10 +81,10 @@ export default function InfoStrip() {
                             View Menu
                         </Link>
 
-                        <Link to="/book-now" className={styles.secondaryBtnStacked}>
+                        <a href="tel:+61296233600" className={styles.secondaryBtnStacked}>
                             <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                            Book a Table
-                        </Link>
+                            Call us to Book a Table
+                        </a>
                     </div>
                 </div>
                 <DividingLine height="8px" />
@@ -96,7 +96,9 @@ export default function InfoStrip() {
                         FOLLOW US ON INSTAGRAM
                     </a>
                 </div>
-                <ReviewsSlider />
+                {/* <ReviewsSlider /> */}
+                <br></br>
+                <br></br>
                 <img src={DeliciousFoodImg} alt="Delicious food" className={styles.heroImage} />
 
                 <br></br><br></br>
@@ -107,10 +109,10 @@ export default function InfoStrip() {
                         View Menu
                     </Link>
 
-                    <Link to="/book-now" className={styles.secondaryBtnStacked}>
+                    <a href="tel:+61296233600" className={styles.secondaryBtnStacked}>
                         <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                        Book a Table
-                    </Link>
+                        Call us to Book a Table
+                    </a>
                 </div>
 
                 <br></br>

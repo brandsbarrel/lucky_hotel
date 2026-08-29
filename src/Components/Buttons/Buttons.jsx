@@ -20,10 +20,10 @@ const Buttons = () => {
                 View Menu
             </Link>
 
-            <Link to="/book-now" className={`${styles.btn} ${styles.secondaryBtn}`}>
+            <a href="tel:+61296233600" className={`${styles.btn} ${styles.secondaryBtn}`}>
                 <CalendarIcon />
-                Book a Table
-            </Link>
+                Call us to Book a Table
+            </a>
         </div>
     )
 }

@@ -56,9 +56,8 @@ const NAV_LINKS = [
     ),
   },
   {
-    label: "Book Now",
-    href: "#Book-Now",
-    highlight: true,
+    label: "Call us to Book a Table",
+    href: "tel:+61296233600",
     icon: (
       <svg viewBox="0 0 24 24" className={styles.navIcon}>
         <rect
