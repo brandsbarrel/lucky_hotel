@@ -1,7 +1,8 @@
 .reviewsStrip {
   background-color: #f8efe8;
-  padding: 0px;
+  padding: 42px 0;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
 }
 
 .heading {
@@ -11,133 +12,89 @@
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 12px;
+  margin: 0 0 32px;
 }
 
-.hint {
-  text-align: center;
-  color: #b8912f;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 0 0 36px;
+.marqueeViewport {
+  width: 100%;
+  overflow: hidden;
+  /* Left-right fade taaki cards edges se smoothly enter/exit hon */
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%);
 }
 
-.stackWrapper {
-  max-width: 380px;
-  margin: 0 auto;
-  position: relative;
-  height: 300px;
+.marqueeTrack {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 0 12px;
+  animation: trainScroll linear infinite;
+  animation-duration: calc(var(--review-count, 6) * 8s);
+}
+
+/* Hover pe train ruk jaye, review padhne ke liye */
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes trainScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /* Exactly half track (original set ka width) scroll hota hai,
+       kyunki reviews duplicate hain isliye loop seamless lagta hai */
+    transform: translateX(-50%);
+  }
 }
 
 .card {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 340px;
-  margin-left: -170px;
+  flex: 0 0 auto;
+  width: 300px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: #fffdfb;
   border: 1px solid rgba(201, 162, 39, 0.35);
   border-radius: 8px;
-  padding: 22px 20px;
+  padding: 28px 24px;
   box-sizing: border-box;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  opacity: 0;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.card:hover {
-  box-shadow: 0 10px 24px rgba(201, 162, 39, 0.25);
-}
-
-.card:focus-visible {
-  outline: 2px solid #d4a24c;
-  outline-offset: 3px;
-}
-
-/* Drop-in entrance: falls from above, from alternating sides, with a small bounce */
-.dropIn {
-  animation: dropInAnim 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: var(--delay, 0s);
-}
-
-@keyframes dropInAnim {
-  0% {
-    opacity: 0;
-    transform: translate(calc(var(--dir, 1) * 160px), -180px) rotate(calc(var(--dir, 1) * 28deg));
-  }
-
-  65% {
-    opacity: 1;
-    transform: translate(calc(var(--dir, 1) * -8px), 8px) rotate(calc(var(--rotate, 0) * 1deg - var(--dir, 1) * 3deg));
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
-  }
-}
-
-/* Card leaving to the back of the stack when clicked */
-.exiting {
-  animation: exitAnim 0.4s ease forwards;
-}
-
-@keyframes exitAnim {
-  0% {
-    opacity: 1;
-    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(calc(var(--dir, 1) * -60px), 140px) rotate(calc(var(--dir, 1) * -18deg));
-  }
-}
-
-/* Settled state: smooth transform transition when stack reorders */
-.settled {
-  opacity: 1;
-  transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
 }
 
 .stars {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: #d4a24c;
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-size: 17px;
+  letter-spacing: 3px;
 }
 
 .quote {
   color: #000000;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   font-style: italic;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .author {
   color: #c9a227;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 
 .googleG {
@@ -171,23 +128,25 @@
   color: #ea4335;
 }
 
-@media (max-width: 420px) {
-  .stackWrapper {
-    max-width: calc(100vw - 40px);
-    height: 320px;
+@media (max-width: 600px) {
+  .heading {
+    font-size: 22px;
+    letter-spacing: 2px;
   }
 
   .card {
-    width: calc(100vw - 80px);
-    margin-left: calc((100vw - 80px) / -2);
+    width: 240px;
+    min-height: 240px;
+    padding: 24px 18px;
+  }
+
+  .quote {
+    font-size: 14px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
-    animation: none !important;
-    transition: none;
-    opacity: 1;
-    transform: translate(var(--offsetX, 0), var(--offsetY, 0)) rotate(calc(var(--rotate, 0) * 1deg));
+  .marqueeTrack {
+    animation: none;
   }
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/lucky.jpeg"; // apna actual path check kar lena
 
@@ -119,7 +118,9 @@ export default function Footer() {
             strokeWidth="1.6"
           />
         </svg>
-        <span>(02) 9623 3600</span>
+        <a href="tel:+61296233600" className={styles.contactLink}>
+          (02) 9623 3600
+        </a>
       </div>
 
       <div className={styles.infoRow}>
@@ -141,7 +142,9 @@ export default function Footer() {
             strokeWidth="1.6"
           />
         </svg>
-        <span>info@luckyaustralian.com</span>
+        <a href="mailto:info@luckyaustralian.com" className={styles.contactLink}>
+          info@luckyaustralian.com
+        </a>
       </div>
 
       {/* Nav links - 2x2 icon grid */}

@@ -47,6 +47,15 @@
     flex-shrink: 0;
 }
 
+.contactLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contactLink:hover {
+    color: #d4a24c;
+}
+
 /* ---------- Nav grid (2x2 icon cells) ---------- */
 .navGrid {
     display: grid;
