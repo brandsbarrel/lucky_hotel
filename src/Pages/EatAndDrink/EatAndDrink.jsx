@@ -38,19 +38,19 @@ const EatAndDrink = () => {
         <section className={styles.orderingSection} aria-label="Online ordering">
           <a
             className={styles.orderButton}
+            href={ONLINE_ORDER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Order our food Online
+          </a>
+          <a
+            className={styles.orderButton}
             href={UBER_EATS_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
             Order on Uber Eats
-          </a>
-          <a
-            className={styles.orderButton}
-            href={ONLINE_ORDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Order Online
           </a>
         </section>
 

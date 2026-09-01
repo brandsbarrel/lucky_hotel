@@ -17,35 +17,35 @@ img {
   vertical-align: top;
 }
 
-.orderingSection {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  background-color: #f8efe8;
-  padding: 32px 20px;
-}
+  .orderingSection {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    background-color: #f8efe8;
+    padding: 32px 20px;
+  }
 
-.orderButton {
-  min-width: 210px;
-  padding: 14px 28px;
-  border: 1px solid #d4a24c;
-  border-radius: 6px;
-  background: #d4a24c;
-  color: #12241f;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
+  .orderButton {
+    min-width: 210px;
+    padding: 14px 28px;
+    border: 1px solid #d4a24c;
+    border-radius: 6px;
+    background: #d4a24c;
+    color: #12241f;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
 
-.orderButton:hover {
-  background: #c19038;
-  border-color: #c19038;
-}
+  .orderButton:hover {
+    background: #c19038;
+    border-color: #c19038;
+  }
 
 .buttonContainer {
   display: flex;

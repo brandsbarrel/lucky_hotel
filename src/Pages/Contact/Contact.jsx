@@ -46,6 +46,11 @@ const handlePrintMenu = () => { // for download menu
     document.body.removeChild(link);
 };
 
+
+const UBER_EATS_URL =
+    "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
+const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
+
 export default function ContactPage() {
 
     const [withTransition, setWithTransition] = useState(true);
@@ -180,7 +185,7 @@ export default function ContactPage() {
                     ))}
                 </div>
 
-                <ReviewSlider/>
+                <ReviewSlider />
 
 
                 <div className={styles.actionButtons}>
@@ -192,17 +197,22 @@ export default function ContactPage() {
                         Call us to Book a Table
                     </a>
 
-                    <Link onClick={() => { handlePrintMenu() }} className={styles.actionBtn}>
-                        Menu in PDF
-                    </Link>
-
                     <a
-                        href="https://www.instagram.com/luckyozhotel"
+                        href={ONLINE_ORDER_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.actionBtn}
                     >
-                        Follow us on Instagram
+                        ORDER OUR FOOD ONLINE
+                    </a>
+
+                    <a
+                        href={UBER_EATS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.actionBtn}
+                    >
+                        ORDER ON UBER EATS
                     </a>
                 </div>
                 <p className={styles.seeSoon}>See you soon!</p>

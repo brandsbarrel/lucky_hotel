@@ -163,34 +163,11 @@ export default function Footer() {
 
       {/* Social icons */}
       <div className={styles.socialRow}>
-        <a href="#facebook" className={styles.socialCircle} aria-label="Facebook">
-          <svg viewBox="0 0 24 24" className={styles.socialIcon}>
-            <path
-              d="M15 8.5h2V5.4c-.3 0-1.5-.1-2.9-.1c-2.9 0-4.9 1.8-4.9 5V13H6.5v3.5H9.2V24h3.6v-7.5h2.8l.4-3.5h-3.2V10c0-1 .3-1.5 1.2-1.5z"
-              fill="currentColor"
-            />
-          </svg>
-        </a>
         <a href="https://www.instagram.com/luckyozhotel" className={styles.socialCircle} aria-label="Instagram">
           <svg viewBox="0 0 24 24" className={styles.socialIcon}>
             <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
             <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
             <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-          </svg>
-        </a>
-        <a href="#tripadvisor" className={styles.socialCircle} aria-label="TripAdvisor">
-          <svg viewBox="0 0 24 24" className={styles.socialIcon}>
-            <circle cx="7.5" cy="13" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-            <circle cx="16.5" cy="13" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-            <circle cx="7.5" cy="13" r="1.2" fill="currentColor" />
-            <circle cx="16.5" cy="13" r="1.2" fill="currentColor" />
-            <path
-              d="M9.5 7.5C10.6 6.6 11.3 6.3 12 6.3s1.4.3 2.5 1.2M2 7.5h5.5M16.5 7.5H22"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
           </svg>
         </a>
       </div>

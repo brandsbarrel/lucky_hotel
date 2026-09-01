@@ -20,6 +20,10 @@ import dish7 from "../../../assets/dishe_crousal7.jpeg";
 const dishImages = [dish1, dish2, dish3, dish4, dish5, dish6, dish7];
 const extendedSlides = [...dishImages, dishImages[0]];
 
+const UBER_EATS_URL =
+    "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
+const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
+
 export default function InfoStrip() {
     const handleScrollTop = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -136,6 +140,25 @@ export default function InfoStrip() {
                         ))}
                     </div>
                 </div>
+                <DividingLine height="8px" />
+                <section className={styles.orderingSection} aria-label="Online ordering">
+                    <a
+                        className={styles.orderButton}
+                        href={ONLINE_ORDER_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Order our food Online
+                    </a>
+                    <a
+                        className={styles.orderButton}
+                        href={UBER_EATS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Order on Uber Eats
+                    </a>
+                </section>
                 <DividingLine height="8px" />
                 <img src={coldrinkImg} alt="Cold drinks" className={styles.heroImage} />
                 {/* <div className={styles.functionMenuWrapper}>
