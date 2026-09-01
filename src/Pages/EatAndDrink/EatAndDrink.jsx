@@ -5,11 +5,12 @@ import menuCover from "../../assets/menu_hero.jpeg";
 import menu1 from "../../assets/Menu_details_1.jpeg";
 import menu2 from "../../assets/Menu_details_2.jpeg";
 import menuPdf from "../../assets/Menu_PDF.pdf";
+import functionmenu from "../../assets/function-menu.jpeg";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
 import ReviewSlider from "../../Components/Review_slider/ReviewSlider";
 
-const menus = [menu2, menu1];
+const menus = [menu2, menu1,functionmenu];
 const UBER_EATS_URL =
   "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
 const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
