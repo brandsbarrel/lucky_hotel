@@ -17,35 +17,35 @@ img {
   vertical-align: top;
 }
 
-  .orderingSection {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    background-color: #f8efe8;
-    padding: 32px 20px;
-  }
+.orderingSection {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: #f8efe8;
+  padding: 32px 20px;
+}
 
-  .orderButton {
-    min-width: 210px;
-    padding: 14px 28px;
-    border: 1px solid #d4a24c;
-    border-radius: 6px;
-    background: #d4a24c;
-    color: #12241f;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background 0.25s ease, border-color 0.25s ease;
-  }
+.orderButton {
+  min-width: 210px;
+  padding: 14px 28px;
+  border: 1px solid #d4a24c;
+  border-radius: 6px;
+  background: #d4a24c;
+  color: #12241f;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
 
-  .orderButton:hover {
-    background: #c19038;
-    border-color: #c19038;
-  }
+.orderButton:hover {
+  background: #c19038;
+  border-color: #c19038;
+}
 
 .buttonContainer {
   display: flex;
@@ -83,6 +83,46 @@ img {
 
 .downloadButton:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Dish Carousel ---------- */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.7s ease-in-out;
+}
+
+.noTransition {
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.slideImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 550px) {
