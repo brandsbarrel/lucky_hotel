@@ -8,6 +8,7 @@ import DeliciousFoodImg from "../../../assets/delicious_food.jpeg"
 import coldrinkImg from "../../../assets/cold_drink_great.jpeg"
 import forkKnifeIcon from "../../../assets/knifeIcon1.jpeg";
 import calendarIcon from "../../../assets/calendaricon.jpeg";
+import { scrollToTop } from "../../../utils/scrollToTop";
 
 import dish1 from "../../../assets/dishe_crousal1.jpeg";
 import dish2 from "../../../assets/dishe_crousal2.jpeg";
@@ -22,11 +23,10 @@ const extendedSlides = [...dishImages, dishImages[0]];
 
 const UBER_EATS_URL =
     "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
-const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
 
 export default function InfoStrip() {
     const handleScrollTop = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        scrollToTop();
     };
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -85,7 +85,7 @@ export default function InfoStrip() {
                             View Menu
                         </Link>
 
-                        <a href="tel:+61296233600" className={styles.secondaryBtnStacked}>
+                        <a href="tel:+61296233600" onClick={handleScrollTop} className={styles.secondaryBtnStacked}>
                             <img src={calendarIcon} alt="" className={styles.btnIcon} />
                             Call us to Book a Table
                         </a>
@@ -96,7 +96,7 @@ export default function InfoStrip() {
                 <img src={whatOnImg} alt="What's on this week" className={styles.heroImage} />
                 <br></br>
                 <div className={styles.actions}>
-                    <a href="https://www.instagram.com/luckyozhotel" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
+                    <a href="https://www.instagram.com/luckyozhotel" target="_blank" rel="noopener noreferrer" onClick={handleScrollTop} className={styles.primaryBtn}>
                         FOLLOW US ON INSTAGRAM
                     </a>
                 </div>
@@ -113,7 +113,7 @@ export default function InfoStrip() {
                         View Menu
                     </Link>
 
-                    <a href="tel:+61296233600" className={styles.secondaryBtnStacked}>
+                    <a href="tel:+61296233600" onClick={handleScrollTop} className={styles.secondaryBtnStacked}>
                         <img src={calendarIcon} alt="" className={styles.btnIcon} />
                         Call us to Book a Table
                     </a>
@@ -144,17 +144,10 @@ export default function InfoStrip() {
                 <section className={styles.orderingSection} aria-label="Online ordering">
                     <a
                         className={styles.orderButton}
-                        href={ONLINE_ORDER_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Order our food Online
-                    </a>
-                    <a
-                        className={styles.orderButton}
                         href={UBER_EATS_URL}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={handleScrollTop}
                     >
                         Order on Uber Eats
                     </a>

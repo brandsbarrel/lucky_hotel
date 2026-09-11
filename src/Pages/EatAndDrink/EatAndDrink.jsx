@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./EatAndDrink.module.css";
 
 import menuCover from "../../assets/menu_hero.jpeg";
-import menu1 from "../../assets/Menu_details_1.jpeg";
-import menu2 from "../../assets/Menu_details_2.jpeg";
 import menuPdf from "../../assets/Menu_PDF.pdf";
-import functionmenu from "../../assets/function-menu.jpeg";
+import menuPage1 from "../../assets/menu_page_1.png";
+import menuPage2 from "../../assets/menu_page_2.png";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
 import ReviewSlider from "../../Components/Review_slider/ReviewSlider";
+import { scrollToTop } from "../../utils/scrollToTop";
 
 import dish1 from "../../assets/dishe_crousal1.jpeg";
 import dish2 from "../../assets/dishe_crousal2.jpeg";
@@ -20,10 +20,9 @@ import dish7 from "../../assets/dishe_crousal7.jpeg";
 
 const dishImages = [dish1, dish2, dish3, dish4, dish5, dish6, dish7];
 const extendedSlides = [...dishImages, dishImages[0]];
-const menus = [menu2, menu1,functionmenu];
+const menus = [menuPage1, menuPage2];
 const UBER_EATS_URL =
   "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
-const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
 
 const EatAndDrink = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,11 +53,16 @@ const EatAndDrink = () => {
   }, [withTransition]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    scrollToTop("auto");
   }, []);
+
+  const handleScrollTop = () => {
+    scrollToTop();
+  };
 
   // Opens the PDF in a new tab so people can read/view it first
   const handleViewMenu = () => {
+    handleScrollTop();
     window.open(menuPdf, "_blank", "noopener,noreferrer");
   };
 
@@ -76,29 +80,24 @@ const EatAndDrink = () => {
         <section className={styles.orderingSection} aria-label="Online ordering">
           <a
             className={styles.orderButton}
-            href={ONLINE_ORDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Order our food Online
-          </a>
-          <a
-            className={styles.orderButton}
             href={UBER_EATS_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleScrollTop}
           >
             Order on Uber Eats
           </a>
         </section>
 
         {menus.map((item, index) => (
-          <img
-            key={index}
-            src={item}
-            alt={`Menu ${index + 1}`}
-            className={styles.menuImage}
-          />
+          <React.Fragment key={item}>
+            <img
+              src={item}
+              alt={`Menu ${index + 1}`}
+              className={styles.menuImage}
+            />
+            {index < menus.length - 1 && <DividingLine height="14px" />}
+          </React.Fragment>
         ))}
 
         <div className={styles.buttonContainer}>
@@ -112,8 +111,8 @@ const EatAndDrink = () => {
 
 
         
-        {/* <ReviewSlider /> */}
-
+        <ReviewSlider />
+{/* 
         <div className={styles.carouselContainer}>
                             <div
                                 className={`${styles.track} ${!withTransition ? styles.noTransition : ""}`}
@@ -130,7 +129,7 @@ const EatAndDrink = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
       </main>
     </>
   );

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './Buttons.module.css'
 import forkKnifeIcon from "../../assets/knifeIcon1.jpeg"
 import calendarIcon from '../../assets/calendaricon.jpeg'
+import { scrollToTop } from '../../utils/scrollToTop'
 
 const ForkKnifeIcon = () => (
     <img src={forkKnifeIcon} alt="" className={styles.btnIcon} aria-hidden="true" />
@@ -15,12 +16,12 @@ const CalendarIcon = () => (
 const Buttons = () => {
     return (
         <div className={styles.actions}>
-            <Link to="/eat-drink" className={`${styles.btn} ${styles.primaryBtn}`}>
+            <Link to="/eat-drink" onClick={scrollToTop} className={`${styles.btn} ${styles.primaryBtn}`}>
                 <ForkKnifeIcon />
                 View Menu
             </Link>
 
-            <a href="tel:+61296233600" className={`${styles.btn} ${styles.secondaryBtn}`}>
+            <a href="tel:+61296233600" onClick={scrollToTop} className={`${styles.btn} ${styles.secondaryBtn}`}>
                 <CalendarIcon />
                 Call us to Book a Table
             </a>

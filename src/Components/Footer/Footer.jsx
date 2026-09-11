@@ -1,5 +1,6 @@
 import styles from "./Footer.module.css";
 import logo from "../../assets/lucky.jpeg"; // apna actual path check kar lena
+import { scrollToTop } from "../../utils/scrollToTop";
 
 const NAV_LINKS = [
   {
@@ -118,7 +119,7 @@ export default function Footer() {
             strokeWidth="1.6"
           />
         </svg>
-        <a href="tel:+61296233600" className={styles.contactLink}>
+        <a href="tel:+61296233600" onClick={scrollToTop} className={styles.contactLink}>
           (02) 9623 3600
         </a>
       </div>
@@ -142,7 +143,7 @@ export default function Footer() {
             strokeWidth="1.6"
           />
         </svg>
-        <a href="mailto:info@luckyaustralian.com" className={styles.contactLink}>
+        <a href="mailto:info@luckyaustralian.com" onClick={scrollToTop} className={styles.contactLink}>
           info@luckyaustralian.com
         </a>
       </div>
@@ -153,6 +154,7 @@ export default function Footer() {
           <a
             key={link.label}
             href={link.href}
+            onClick={scrollToTop}
             className={`${styles.navCell} ${link.highlight ? styles.navCellHighlight : ""}`}
           >
             {link.icon}
@@ -163,7 +165,7 @@ export default function Footer() {
 
       {/* Social icons */}
       <div className={styles.socialRow}>
-        <a href="https://www.instagram.com/luckyozhotel" className={styles.socialCircle} aria-label="Instagram">
+        <a href="https://www.instagram.com/luckyozhotel" onClick={scrollToTop} className={styles.socialCircle} aria-label="Instagram">
           <svg viewBox="0 0 24 24" className={styles.socialIcon}>
             <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
             <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
@@ -181,7 +183,7 @@ export default function Footer() {
       <div className={styles.bottomRow}>
         <span>© The Lucky Australian Hotel 2026</span>
         <span className={styles.pipe}>|</span>
-        <a href="#privacy" className={styles.privacyLink}>
+        <a href="#privacy" onClick={scrollToTop} className={styles.privacyLink}>
           Privacy Policy
         </a>
       </div>

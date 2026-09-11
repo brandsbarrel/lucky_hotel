@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import { scrollToTop } from "../../utils/scrollToTop";
 
 import dish1 from "../../assets/dishe_crousal1.jpeg";
 import dish2 from "../../assets/dishe_crousal2.jpeg";
@@ -49,7 +50,6 @@ const handlePrintMenu = () => { // for download menu
 
 const UBER_EATS_URL =
     "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
-const ONLINE_ORDER_URL = "https://www.foodbooking.com/api/fb/_x4l6_e";
 
 export default function ContactPage() {
 
@@ -189,27 +189,19 @@ export default function ContactPage() {
 
 
                 <div className={styles.actionButtons}>
-                    <Link to="/eat-and-drink" className={styles.actionBtn}>
+                    <Link to="/eat-and-drink" onClick={scrollToTop} className={styles.actionBtn}>
                         View Menu
                     </Link>
 
-                    <a href="tel:+61296233600" className={styles.actionBtn}>
+                    <a href="tel:+61296233600" onClick={scrollToTop} className={styles.actionBtn}>
                         Call us to Book a Table
-                    </a>
-
-                    <a
-                        href={ONLINE_ORDER_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.actionBtn}
-                    >
-                        ORDER OUR FOOD ONLINE
                     </a>
 
                     <a
                         href={UBER_EATS_URL}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={scrollToTop}
                         className={styles.actionBtn}
                     >
                         ORDER ON UBER EATS

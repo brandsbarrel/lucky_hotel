@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/lucky.jpeg";
 import { Link, NavLink } from "react-router-dom"
+import { scrollToTop } from "../../utils/scrollToTop";
 
 const NAV_LINKS = [
     { label: "Home", to: "/" },
@@ -21,26 +22,30 @@ export default function Navbar() {
     }, [isOpen]);
 
     const closeMenu = () => setIsOpen(false);
+    const handleNavClick = () => {
+        closeMenu();
+        scrollToTop();
+    };
 
     return (
         <header className={styles.navbar}>
             <div className={styles.inner}>
                 {/* Logo (image) */}
-                <Link to="/" className={styles.logo} onClick={closeMenu}>
+                <Link to="/" className={styles.logo} onClick={handleNavClick}>
                     <img src={logo} alt="Royal Oak Hotel" className={styles.logoImg} />
                 </Link>
 
                 {/* Desktop nav links */}
                 <nav className={styles.navLinks} aria-label="Primary">
                     {NAV_LINKS.map((link) => (
-                        <NavLink key={link.label} to={link.to} className={styles.navLink}>
+                        <NavLink key={link.label} to={link.to} onClick={handleNavClick} className={styles.navLink}>
                             {link.label}
                         </NavLink>
                     ))}
                 </nav>
 
                 {/* Call us to Book a Table button (desktop) */}
-                <a href="tel:+61296233600" className={styles.bookBtn}>
+                <a href="tel:+61296233600" onClick={handleNavClick} className={styles.bookBtn}>
                     Call us to Book a Table
                 </a>
 
@@ -66,7 +71,7 @@ export default function Navbar() {
                             to={link.to}
                             className={styles.mobileNavLink}
                             style={{ transitionDelay: isOpen ? `${i * 0.05 + 0.1}s` : "0s" }}
-                            onClick={closeMenu}
+                            onClick={handleNavClick}
                         >
                             {link.label}
                         </NavLink>
@@ -77,7 +82,7 @@ export default function Navbar() {
                         style={{
                             transitionDelay: isOpen ? `${NAV_LINKS.length * 0.05 + 0.1}s` : "0s",
                         }}
-                        onClick={closeMenu}
+                        onClick={handleNavClick}
                     >
                         Call us to Book a Table
                     </a>
