@@ -71,11 +71,7 @@ const EatAndDrink = () => {
       <DividingLine height="14px" />
 
       <main className={styles.page}>
-        <img
-          src={menuCover}
-          alt="Menu Cover"
-          className={styles.coverImage}
-        />
+        <img src={menuCover} alt="Menu Cover" className={styles.coverImage} />
 
         <section className={styles.orderingSection} aria-label="Online ordering">
           <a
@@ -91,45 +87,30 @@ const EatAndDrink = () => {
 
         {menus.map((item, index) => (
           <React.Fragment key={item}>
-            <img
-              src={item}
-              alt={`Menu ${index + 1}`}
-              className={styles.menuImage}
-            />
+            <img src={item} alt={`Menu ${index + 1}`} className={styles.menuImage} />
             {index < menus.length - 1 && <DividingLine height="14px" />}
           </React.Fragment>
         ))}
 
         <div className={styles.buttonContainer}>
-          <button
-            className={styles.printButton}
-            onClick={handleViewMenu}
-          >
+          <button className={styles.printButton} onClick={handleViewMenu}>
             DOWNLOAD PDF MENU
           </button>
         </div>
 
-
-        
-        <ReviewSlider />
-{/* 
         <div className={styles.carouselContainer}>
-                            <div
-                                className={`${styles.track} ${!withTransition ? styles.noTransition : ""}`}
-                                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                                onTransitionEnd={handleTransitionEnd}
-                            >
-                                {extendedSlides.map((src, i) => (
-                                    <div className={styles.slide} key={i}>
-                                        <img
-                                            src={src}
-                                            alt={`Dish ${i + 1}`}
-                                            className={styles.slideImage}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div> */}
+          <div
+            className={`${styles.track} ${!withTransition ? styles.noTransition : ""}`}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {extendedSlides.map((src, i) => (
+              <div className={styles.slide} key={i}>
+                <img src={src} alt={`Dish ${i + 1}`} className={styles.slideImage} />
+              </div>
+            ))}
+          </div>
+        </div>
       </main>
     </>
   );
