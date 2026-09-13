@@ -7,7 +7,6 @@ import menuPage1 from "../../assets/menu_page_1.png";
 import menuPage2 from "../../assets/menu_page_2.png";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
-import ReviewSlider from "../../Components/Review_slider/ReviewSlider";
 import { scrollToTop } from "../../utils/scrollToTop";
 
 import dish1 from "../../assets/dishe_crousal1.jpeg";
