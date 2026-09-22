@@ -5,6 +5,7 @@ import menuCover from "../../assets/menu_hero.jpeg";
 import menuPdf from "../../assets/Menu_PDF.pdf";
 import menuPage1 from "../../assets/menu_page_1.png";
 import menuPage2 from "../../assets/menu_page_2.png";
+import menuPage3 from "../../assets/menu_page_3.jpeg";
 
 import DividingLine from "../../Components/Dividing_line/DividingLine";
 import { scrollToTop } from "../../utils/scrollToTop";
@@ -19,7 +20,7 @@ import dish7 from "../../assets/dishe_crousal7.jpeg";
 
 const dishImages = [dish1, dish2, dish3, dish4, dish5, dish6, dish7];
 const extendedSlides = [...dishImages, dishImages[0]];
-const menus = [menuPage1, menuPage2];
+const menus = [menuPage1, menuPage2, menuPage3];
 const UBER_EATS_URL =
   "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
 
