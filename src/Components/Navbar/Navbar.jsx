@@ -3,6 +3,7 @@ import styles from "./Navbar.module.css";
 import logo from "../../assets/lucky.jpeg";
 import { Link, NavLink } from "react-router-dom"
 import { scrollToTop } from "../../utils/scrollToTop";
+import { OPENTABLE_BOOKING_URL } from "../../utils/booking";
 
 const NAV_LINKS = [
     { label: "Home", to: "/" },
@@ -44,9 +45,9 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                {/* Call us to Book a Table button (desktop) */}
-                <a href="tel:+61296233600" onClick={handleNavClick} className={styles.bookBtn}>
-                    Call us to Book a Table
+                {/* Booking button (desktop) */}
+                <a href={OPENTABLE_BOOKING_URL} onClick={closeMenu} className={styles.bookBtn}>
+                    Book Now
                 </a>
 
                 {/* Hamburger button (mobile) */}
@@ -77,14 +78,14 @@ export default function Navbar() {
                         </NavLink>
                     ))}
                     <a
-                        href="tel:+61296233600"
+                        href={OPENTABLE_BOOKING_URL}
                         className={styles.mobileBookBtn}
                         style={{
                             transitionDelay: isOpen ? `${NAV_LINKS.length * 0.05 + 0.1}s` : "0s",
                         }}
-                        onClick={handleNavClick}
+                        onClick={closeMenu}
                     >
-                        Call us to Book a Table
+                        Book Now
                     </a>
                 </nav>
             </div>

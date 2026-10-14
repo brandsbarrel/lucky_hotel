@@ -10,6 +10,7 @@ import { useCallback } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { scrollToTop } from "../../utils/scrollToTop";
+import { OPENTABLE_BOOKING_URL } from "../../utils/booking";
 
 import dish1 from "../../assets/dishe_crousal1.jpeg";
 import dish2 from "../../assets/dishe_crousal2.jpeg";
@@ -50,6 +51,14 @@ const handlePrintMenu = () => { // for download menu
 
 const UBER_EATS_URL =
     "https://www.ubereats.com/au/store/the-lucky-australian-hotel/CUK0OZdTQAuCqAci82JvNA";
+
+function OpenTableBooking() {
+    return (
+        <a href={OPENTABLE_BOOKING_URL} className={styles.actionBtn}>
+            Book Now
+        </a>
+    );
+}
 
 export default function ContactPage() {
 
@@ -197,9 +206,7 @@ export default function ContactPage() {
                         View Menu
                     </Link>
 
-                    <a href="tel:+61296233600" onClick={scrollToTop} className={styles.actionBtn}>
-                        Call us to Book a Table
-                    </a>
+                    <OpenTableBooking />
 
                     <a
                         href={UBER_EATS_URL}

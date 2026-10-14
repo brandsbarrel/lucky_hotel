@@ -9,6 +9,7 @@ import coldrinkImg from "../../../assets/cold_drink_great.jpeg"
 import forkKnifeIcon from "../../../assets/knifeIcon1.jpeg";
 import calendarIcon from "../../../assets/calendaricon.jpeg";
 import { scrollToTop } from "../../../utils/scrollToTop";
+import { OPENTABLE_BOOKING_URL } from "../../../utils/booking";
 
 import dish1 from "../../../assets/dishe_crousal1.jpeg";
 import dish2 from "../../../assets/dishe_crousal2.jpeg";
@@ -85,9 +86,9 @@ export default function InfoStrip() {
                             View Menu
                         </Link>
 
-                        <a href="tel:+61296233600" onClick={handleScrollTop} className={styles.secondaryBtnStacked}>
+                        <a href={OPENTABLE_BOOKING_URL} className={styles.secondaryBtnStacked}>
                             <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                            Call us to Book a Table
+                            Book Now
                         </a>
                     </div>
                 </div>
@@ -113,9 +114,9 @@ export default function InfoStrip() {
                         View Menu
                     </Link>
 
-                    <a href="tel:+61296233600" onClick={handleScrollTop} className={styles.secondaryBtnStacked}>
+                    <a href={OPENTABLE_BOOKING_URL} className={styles.secondaryBtnStacked}>
                         <img src={calendarIcon} alt="" className={styles.btnIcon} />
-                        Call us to Book a Table
+                        Book Now
                     </a>
                 </div>
 
